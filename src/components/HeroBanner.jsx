@@ -18,7 +18,7 @@ const HeroBanner = () => {
       </p>
       <button
         type="button"
-        className="text-white bg-gradient-to-r  from-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+        className="text-white bg-gradient-to-r from-red-500 to-red-600 hover:bg-gradient-to-br hover:scale-105 transition-transform transform ease-in-out delay-100 duration-300 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
       >
         <a href="#exercises" className="text-xl">
           Explore Execrcises
@@ -26,8 +26,8 @@ const HeroBanner = () => {
       </button>
 
       {/* Blurry Exercise Text */}
-      <p className="text-6xl text-[#FF2625] opacity-10 text-[150px]">
-        Exercise
+      <p className="text-6xl text-[#FF2625] opacity-10 text-[145px] mt-7 -ml-20 ">
+        Gym Guide
       </p>
 
       {/* Herobanner Image */}
