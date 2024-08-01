@@ -51,7 +51,9 @@ body {
   .react-horizontal-scrolling-menu--wrapper {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
   }
   
   .detail-image {
@@ -65,7 +67,7 @@ body {
     right: 150px;
     top: 0px;
     width: 600px;
-    height: 700px;
+    height: 775px;
   }
   
   .exercise-card {
@@ -120,6 +122,8 @@ body {
   
     .react-horizontal-scrolling-menu--scroll-container {
       width: 500px;
+      display: flex;
+      justify-content: center;
     }
   
     .left-arrow,
