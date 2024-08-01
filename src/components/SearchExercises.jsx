@@ -1,53 +1,58 @@
 import React, { useEffect, useState } from "react";
 import { exerciseOptions, fetchData } from "../utils/fetchData";
+import HorizontalScrollBar from "./HorizontalScrollBar";
 
-const SearchExercises = () => {
+const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   const [search, setSearch] = useState("");
-  const [exercises, setExercise] = useState([]);
   const [bodyParts, setBodyParts] = useState([]);
 
+  // Data for Body Parts
   useEffect(() => {
     const fetchExercisesData = async () => {
-      const bodyPartData = await fetch(
+      const bodyPartsData = await fetchData(
         "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
         exerciseOptions
       );
 
-      setBodyParts(["all", ...bodyPartData]);
+      setBodyParts(["all", ...bodyPartsData]);
     };
 
-    fetchExercisesData();
+    fetchExercisesData(); //! Won't this be done automatically?
   }, []);
 
   //Handling search
   const handleSearch = async () => {
     if (search) {
-      const exerciseData = await fetchData(
-        "https://exercisedb.p.rapidapi.com/exercises",
-        exerciseOptions // For method and headers of API
-      );
+      try {
+        const exercisesData = await fetchData(
+          "https://exercisedb.p.rapidapi.com/exercises?limit=50",
+          exerciseOptions
+        );
 
-      //console.log(exerciseData);
-      const searchedExercises = exerciseData.filter(
-        (exercise) =>
-          exercise.name.toLowerCase().includes(search) ||
-          exercise.bodyPart.toLowerCase().includes(search) ||
-          exercise.equipment.toLowerCase().includes(search) ||
-          exercise.target.toLowerCase().includes(search)
-      );
+        const searchedExercises = exercisesData.filter(
+          (item) =>
+            item.name.toLowerCase().includes(search) ||
+            item.target.toLowerCase().includes(search) ||
+            item.equipment.toLowerCase().includes(search) ||
+            item.bodyPart.toLowerCase().includes(search)
+        );
 
-      setSearch(""); // emptied the search box
-      exercises(searchedExercises);
+        window.scrollTo({ top: 1800, left: 100, behavior: "smooth" });
+
+        setSearch("");
+        setExercises(searchedExercises);
+      } catch (error) {
+        console.error("Error fetching exercises:", error);
+      }
     }
   };
 
   return (
     <div className="mt-9 p-5 w-screen">
       <p className="text-5xl mb-12 text-center">
-        Awsome Exercises You <br /> Should Know
+        Awesome Exercises You <br /> Should Know
       </p>
 
-      {/* Searchbox */}
       <div className="relative mb-18 flex justify-center">
         <input
           type="text"
@@ -64,6 +69,14 @@ const SearchExercises = () => {
         >
           Search
         </button>
+      </div>
+
+      <div className="p-5 w-full flex">
+        <HorizontalScrollBar
+          data={bodyParts}
+          bodyPart={bodyPart}
+          setBodyPart={setBodyPart}
+        />
       </div>
     </div>
   );
