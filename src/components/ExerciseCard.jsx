@@ -20,7 +20,6 @@ const ExerciseCard = ({ exercise }) => {
         </button>
       </div>
       <div className="ml-5 mt-3 pb-2 text-3xl font-bold capitalize text-center">
-        {/* {exercise.name} */}
         {exercise.name.length > 25
           ? exercise.name.slice(0, 25) + "..."
           : exercise.name}
