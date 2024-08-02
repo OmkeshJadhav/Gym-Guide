@@ -19,9 +19,12 @@ const ExerciseCard = ({ exercise }) => {
           {exercise.target}
         </button>
       </div>
-      <p className="ml-5 mt-3 pb-2 font-bold capitalize text-center">
-        {exercise.name}
-      </p>
+      <div className="ml-5 mt-3 pb-2 text-3xl font-bold capitalize text-center">
+        {/* {exercise.name} */}
+        {exercise.name.length > 25
+          ? exercise.name.slice(0, 25) + "..."
+          : exercise.name}
+      </div>
     </Link>
   );
 };
