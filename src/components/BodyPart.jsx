@@ -15,7 +15,7 @@ const BodyPart = ({ item, bodyPart, setBodyPart }) => {
         <img
           src={Icon}
           alt="gym"
-          className="w-14 h-14 p-2 mx-6  transition-transform transform ease-in-out delay-100 duration-300"
+          className="w-14 h-14 p-2 mx-6 transition-transform transform ease-in-out delay-100 duration-300"
         />
       </div>
       <div className="text-lg font-bold uppercase p-1 text-center">

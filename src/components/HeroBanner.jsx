@@ -3,35 +3,45 @@ import HeroBannerImage from "../assets/images/banner.png";
 
 const HeroBanner = () => {
   return (
-    <div className="p-5 relative mt-[100px] ml-24 w-screen">
-      {/* Herobanner Text Content and Button */}
-      <p className="text-[#FF2625] text-3xl font-extrabold my-4">
-        Fitness Club
-      </p>
+    <div className="relative min-h-screen w-screen">
+      <div className="container w-screen mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row lg:items-center">
+          <div className="lg:w-1/2 z-10">
+            <p className="text-[#FF2625] text-2xl sm:text-3xl font-extrabold mb-4">
+              Fitness Club
+            </p>
 
-      <h2 className="text-6xl font-extrabold my-6">
-        Sweat, Smile <br /> And Repeat
-      </h2>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6">
+              Sweat, Smile <br /> And Repeat
+            </h2>
 
-      <p className="text-2xl leading-9 my-6">
-        Checkout the most effective Exercises
-      </p>
-      <button
-        type="button"
-        className="text-white bg-gradient-to-r from-red-500 to-red-600 hover:bg-gradient-to-br hover:scale-105 transition-transform transform ease-in-out delay-100 duration-300 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-      >
-        <a href="#exercises" className="text-xl">
-          Explore Execrcises
-        </a>
-      </button>
+            <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed mb-6">
+              Checkout the most effective Exercises
+            </p>
 
-      {/* Blurry Exercise Text */}
-      <p className="text-6xl text-[#FF2625] opacity-10 text-[145px] mt-7 -ml-20 ">
-        Gym Guide
-      </p>
+            <button
+              type="button"
+              className="text-white bg-gradient-to-r from-red-500 to-red-600 hover:bg-gradient-to-br hover:scale-105 transition-transform transform ease-in-out delay-100 duration-300 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+            >
+              <a href="#exercises" className="text-xl">
+                Explore Exercises
+              </a>
+            </button>
 
-      {/* Herobanner Image */}
-      <img src={HeroBannerImage} alt="banner" id="hero-banner-img" />
+            <p className="text-[#FF2625] opacity-10 text-6xl sm:text-8xl lg:text-9xl mt-7 hidden lg:block">
+              Gym Guide
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="absolute top-0 right-0 w-1/2 h-full ">
+        <img
+          src={HeroBannerImage}
+          alt="banner"
+          className="relative -top-36 h-[800px] w-[700px]"
+        />
+      </div>
     </div>
   );
 };

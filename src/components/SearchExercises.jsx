@@ -48,7 +48,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   };
 
   return (
-    <div className="mt-9 p-5 w-screen">
+    <div className="p-4 w-screen">
       <p className="text-5xl mb-12 text-center">
         Awesome Exercises You <br /> Should Know
       </p>

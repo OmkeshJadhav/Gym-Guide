@@ -19,13 +19,35 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   useEffect(() => {
+    const fetchExercisesData = async () => {
+      let exercisesData = [];
+
+      if (bodyPart === "all") {
+        exercisesData = await fetchData(
+          "https://exercisedb.p.rapidapi.com/exercises?limit=50",
+          exerciseOptions
+        );
+      } else {
+        exercisesData = await fetchData(
+          `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}?limit=50`,
+          exerciseOptions
+        );
+      }
+
+      setExercises(exercisesData);
+    };
+
+    fetchExercisesData();
+  }, [bodyPart]);
+
+  useEffect(() => {
     // Reset to first page when exercises or bodyPart changes
     setCurrentPage(1);
   }, [exercises, bodyPart]);
 
   return (
     <div className="w-screen">
-      <p className="font-bold text-4xl mx-10 mb-16">Showing Results</p>
+      <p className="font-bold text-4xl mx-10 mb-5">Showing Exercises</p>
       <div className="flex justify-around flex-wrap pr-6">
         {currentExercises.map((exercise, index) => {
           return <ExerciseCard key={index} exercise={exercise} />;
