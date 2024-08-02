@@ -50,6 +50,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
       <p className="font-bold text-4xl mx-10 mb-5">Showing Exercises</p>
       <div className="flex justify-around flex-wrap pr-6">
         {currentExercises.map((exercise, index) => {
+          // console.log(exercise);
           return <ExerciseCard key={index} exercise={exercise} />;
         })}
       </div>
