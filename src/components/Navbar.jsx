@@ -20,7 +20,10 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="hover:text-[#fa5f55]">
-            <a href="#exercises" className="decoration-0 text-[#3A1212]">
+            <a
+              href="#Showing_Exercises"
+              className="decoration-0 text-[#3A1212]"
+            >
               Exercises
             </a>
           </li>

@@ -8,7 +8,7 @@ const BodyPart = ({ item, bodyPart, setBodyPart }) => {
       className="flex flex-col items-center w-28 ml-2  hover:scale-110 transition-transform transform ease-in-out delay-100 duration-300 hover:border-t-2 hover:border-b-2 border-[#FF2625] cursor-pointer"
       onClick={() => {
         setBodyPart(item);
-        window.scroll({ top: 1800, left: 100, behavior: "smooth" });
+        window.scroll({ behavior: "smooth" });
       }}
     >
       <div className="flex justify-center flex-wrap">

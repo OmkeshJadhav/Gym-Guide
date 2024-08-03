@@ -23,7 +23,10 @@ const HeroBanner = () => {
               type="button"
               className="text-white bg-gradient-to-r from-red-500 to-red-600 hover:bg-gradient-to-br hover:scale-105 transition-transform transform ease-in-out delay-100 duration-300 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2"
             >
-              <a href="/" className="text-xl">
+              <a
+                href="#Showing_Exercises"
+                className="text-xl scroll-smooth"
+              >
                 Explore Exercises
               </a>
             </button>

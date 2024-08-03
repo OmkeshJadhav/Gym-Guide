@@ -47,7 +47,9 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
 
   return (
     <div className="w-screen">
-      <p className="font-bold text-4xl mx-10 mb-5">Showing Exercises</p>
+      <p className="font-bold text-4xl mx-10 mb-5" id="Showing_Exercises">
+        Showing Exercises
+      </p>
       <div className="flex flex-wrap px-6  sm:justify-evenly md:justify-evenly lg:justify-around">
         {currentExercises.map((exercise, index) => {
           // console.log(exercise);
