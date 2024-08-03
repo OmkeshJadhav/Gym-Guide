@@ -65,7 +65,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
           }}
         />
         <button
-          className="bg-[#FF2625] p-3 w-40 rounded-r-lg text-xl text-white"
+          className="bg-[#FF2625] p-3 lg:w-40 md:w-40 rounded-r-lg text-xl text-white sm:w-20 "
           onClick={handleSearch}
         >
           Search

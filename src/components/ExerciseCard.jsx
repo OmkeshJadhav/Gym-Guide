@@ -8,7 +8,7 @@ const ExerciseCard = ({ exercise }) => {
     <Link
       to={`/exercise/${exercise.id}`}
       id="exercise-card"
-      className="my-5 p-8 pt-0 hover:border-y-2 border-[#ff2625] hover:scale-105 transition-transform transform ease-in-out delay-100 duration-300 md:w-1/2"
+      className="my-5 p-8 pt-0 hover:border-y-2 border-[#ff2625] hover:scale-105 transition-transform transform ease-in-out delay-100 duration-300 md:w-1/2 lg:w-1/3"
     >
       <img src={exercise.gifUrl} alt={exercise.name} loading="lazy" />
       <div className="text-center m-2">

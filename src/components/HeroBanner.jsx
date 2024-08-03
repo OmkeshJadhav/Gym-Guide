@@ -36,7 +36,7 @@ const HeroBanner = () => {
             <img
               src={HeroBannerImage}
               alt="banner"
-              className="relative lg:-top-36 lg:h-[800px] lg:w-[700px]"
+              className="relative right-4 p-1 lg:-top-32 lg:h-[800px] lg:w-[700px] md:w-full md:h-full"
             />
           </div>
         </div>

@@ -4,24 +4,22 @@ import Logo from "../assets/images/Logo.png";
 
 const Navbar = () => {
   return (
-    <div className="w-screen flex justify-normal px-10 py-1 mb-5  sm:mt-8 md:mt-3">
-      <div className="items-center">
-        <Link to={"/"}>
-          <img src={Logo} className="w-12 h-12 mx-5 my-2" alt="Logo" />
-        </Link>
-      </div>
+    <div className="w-full flex justify-between px-4 sm:px-10 py-3 mb-5 sm:mt-8 md:mt-3 items-center">
+      <Link to="/">
+        <img src={Logo} className="w-10 h-10 sm:w-12 sm:h-12" alt="Logo" />
+      </Link>
 
       <div>
-        <ul className="flex items-center pt-2 text-2xl align-sub px-20">
-          <li className="p-5 hover:text-[#fa5f55]">
+        <ul className="flex items-center space-x-4 sm:space-x-10 text-xl sm:text-2xl">
+          <li className="hover:text-[#fa5f55]">
             <Link
               to="/"
-              className="decoration-0 text-[#3A1212] border-b-4 border-[#FF2625] "
+              className="decoration-0 text-[#3A1212] border-b-4 border-[#FF2625]"
             >
               Home
             </Link>
           </li>
-          <li>
+          <li className="hover:text-[#fa5f55]">
             <a href="#exercises" className="decoration-0 text-[#3A1212]">
               Exercises
             </a>

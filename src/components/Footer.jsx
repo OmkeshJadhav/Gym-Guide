@@ -4,14 +4,16 @@ const bicepEmoji = "\u{1F4AA}";
 
 const Footer = () => {
   return (
-    <div className="mt-20 bg-[#FFF3F4] w-screen flex justify-center">
-      <div className="p-1 px-2 pt-6">
+    <div className="mt-12 bg-[#FFF3F4] w-screen flex justify-center">
+      <div className="flex flex-col items-center sm:flex-row sm:items-center sm:justify-center p-4 sm:px-6 sm:pt-6">
         <img
           src={Logo}
           alt="Logo"
-          className="w-20 h-16 relative left-10 mb-2"
+          className="w-16 h-12 sm:w-20 sm:h-16 mb-4 sm:mb-0 sm:mr-4"
         />
-        <p>Made For Healthy Life {bicepEmoji}</p>
+        <p className="text-center sm:text-left">
+          Made For Healthy Life {bicepEmoji}
+        </p>
       </div>
     </div>
   );
