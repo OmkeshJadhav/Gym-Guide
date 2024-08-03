@@ -4,7 +4,7 @@ import ExerciseCard from "./ExerciseCard";
 import Pagination from "./Pagination";
 
 const Exercises = ({ exercises, setExercises, bodyPart }) => {
-  console.log(typeof bodyPart);
+  // console.log(typeof bodyPart);
   const [currentPage, setCurrentPage] = useState(1);
   const [exercisesPerPage] = useState(12);
 
@@ -48,7 +48,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
   return (
     <div className="w-screen">
       <p className="font-bold text-4xl mx-10 mb-5">Showing Exercises</p>
-      <div className="flex justify-around flex-wrap pr-6">
+      <div className="flex flex-wrap px-6  sm:justify-evenly md:justify-evenly lg:justify-around">
         {currentExercises.map((exercise, index) => {
           // console.log(exercise);
           return <ExerciseCard key={index} exercise={exercise} />;

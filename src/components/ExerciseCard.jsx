@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ExerciseCard = ({ exercise }) => {
-  // console.log(exercise);
+  console.log(exercise);
 
   return (
     <Link
       to={`/exercise/${exercise.id}`}
       id="exercise-card"
-      className="my-5 p-8 pt-0 hover:border-y-2 border-[#ff2625] hover:scale-105 transition-transform transform ease-in-out delay-100 duration-300"
+      className="my-5 p-8 pt-0 hover:border-y-2 border-[#ff2625] hover:scale-105 transition-transform transform ease-in-out delay-100 duration-300 md:w-1/2"
     >
       <img src={exercise.gifUrl} alt={exercise.name} loading="lazy" />
       <div className="text-center m-2">

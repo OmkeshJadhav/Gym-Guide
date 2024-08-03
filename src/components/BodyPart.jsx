@@ -11,7 +11,7 @@ const BodyPart = ({ item, bodyPart, setBodyPart }) => {
         window.scroll({ top: 1800, left: 100, behavior: "smooth" });
       }}
     >
-      <div className="flex justify-center">
+      <div className="flex justify-center flex-wrap">
         <img
           src={Icon}
           alt="gym"
