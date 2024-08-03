@@ -4,16 +4,16 @@ import ExerciseCard from "./ExerciseCard";
 import Pagination from "./Pagination";
 
 const Exercises = ({ exercises, setExercises, bodyPart }) => {
+  console.log(typeof bodyPart);
   const [currentPage, setCurrentPage] = useState(1);
   const [exercisesPerPage] = useState(12);
 
   // Get current exercises
   const indexOfLastExercise = currentPage * exercisesPerPage;
   const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
-  const currentExercises = exercises.slice(
-    indexOfFirstExercise,
-    indexOfLastExercise
-  );
+  const currentExercises = Array.isArray(exercises)
+    ? exercises.slice(indexOfFirstExercise, indexOfLastExercise)
+    : [];
 
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -24,12 +24,12 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
 
       if (bodyPart === "all") {
         exercisesData = await fetchData(
-          "https://exercisedb.p.rapidapi.com/exercises?limit=50",
+          "https://exercisedb.p.rapidapi.com/exercises?limit=10",
           exerciseOptions
         );
       } else {
         exercisesData = await fetchData(
-          `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}?limit=50`,
+          `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}?limit=10`,
           exerciseOptions
         );
       }
